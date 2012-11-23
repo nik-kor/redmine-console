@@ -2,11 +2,12 @@
   "author": "Nikita Korotkih <nikita.korotkih@gmail.com>",
   "name": "redmine-console",
   "description": "Console interface for Redmine REST API",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "url": ""
   },
-  "bin" : "./bin/redmine-console.js",
+  "bin" : "./bin/redmine-cli.js",
+  "main" : "./index.js",
   "dependencies": {
     "nopt": ">=1.0.10",
     "node-redmine": "https://github.com/nik-kor/node-redmine/archive/master.tar.gz",
@@ -17,5 +18,9 @@
   "engines": {
     "node": ">0.7.x",
     "npm": ">1.1.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nik-kor/redmine-console"
   }
 }
