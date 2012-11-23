@@ -1,0 +1,7 @@
+node_modules
+
+/tags
+#vim hot backups
+*.swp
+*.swo
+
