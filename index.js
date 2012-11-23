@@ -9,6 +9,7 @@ var nopt = require("nopt")
                 , "project_id" : [Number, String]
                 , "hours": String
                 , "activity_id": Number
+                , "spent_on": String
                 }
   , shortHands = {}
   , options = nopt(knownOpts, shortHands, process.argv);
@@ -53,17 +54,18 @@ if(options.add_time) {
       return;
     }
     var projectIds = _.map(data.projects, function(project) { return project.id; });
-    if(_.indexOf(projectIds, options.project_id) == -1) {
-      console.log
-        ( ["\nPlease, specify correct project id from list"
-          , ""
-          , util.inspect(data.projects)
-          , ""
-          , ""
-          ].join("\n"));
+    //@todo project identifier could also be a string
+  /*  if(_.indexOf(projectIds, options.project_id) == -1) {*/
+      //console.log
+        //( ["\nPlease, specify correct project id from list"
+          //, ""
+          //, util.inspect(data.projects)
+          //, ""
+          //, ""
+          //].join("\n"));
 
-      return;
-    }
+      //return;
+    /*}*/
 
     //check activity id
     if(_.indexOf(_.values(redmineValues.activity_ids), options.activity_id) == -1) {
@@ -82,6 +84,7 @@ if(options.add_time) {
         project_id: options.project_id
       , hours: options.hours
       , activity_id: options.activity_id
+      , spent_on: options.spent_on
       }
     };
 
